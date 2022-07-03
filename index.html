@@ -8,8 +8,13 @@
     <title>Document</title>
 </head>
 
-<body>
-    <h1>Hi Youtube</h1>
+<body style="background-color: lightgray;">
+    <button onclick="toggleMode(modes.pan)">Toggle Pan</button>
+    <button onclick="toggleMode(modes.drawing)">Toggle Drawing</button>
+
+
+    <canvas id="canvas" style="border: 5px solid orange;"></canvas>
+
 
     <script src="./lib/fabric.min.js"></script>
     <script src="./index.js"></script>
