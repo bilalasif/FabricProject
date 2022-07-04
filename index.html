@@ -6,16 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body style="background-color: lightgray;">
     <button onclick="toggleMode(modes.pan)">Toggle Pan</button>
-    <button onclick="toggleMode(modes.drawing)">Toggle Drawing</button>
-
-
+    <button onclick="toggleMode(modes.drawing)">Toggle Drawing</button> Color: <input id="colorPicker" value="#000000" data-jscolor="{}">
+    <button onclick="clearCanvas(canvas,svgState)">Clear</button>
+    <button onclick="restoreCanvas(canvas, svgState)">Restore</button>
     <canvas id="canvas" style="border: 5px solid orange;"></canvas>
+    <div id="objectButtonWrapper">
+        <p id="objectsTitle">Objects</p>
+        <div id="objectButtons">
+            <button onclick="createRect(canvas)">Rect</button>
+            <button onclick="createCircle(canvas)">Circ</button>
 
+        </div>
+        <button onclick="groupObjects(canvas,group,true)">Group</button>
+        <button onclick="groupObjects(canvas,group,false)">UnGroup</button>
+    </div>
+    <div id="objectButtonWrapper">
+        <p class="objectsTitle">Image</p>
+        <input id="myImg" type="file" accept="image/*">
+    </div>
 
+    <script src="./lib/jscolor.js"></script>
     <script src="./lib/fabric.min.js"></script>
     <script src="./index.js"></script>
 
